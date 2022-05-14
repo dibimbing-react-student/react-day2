@@ -26,7 +26,7 @@ export default class Content extends Component {
     //     console.log("component Will Unmount");
     // }
 
-    addCount() {
+    addCount = () => {
         this.setState({ count: this.state.count + 1 });
     }
 

@@ -16,7 +16,7 @@ const Header = (props) => {
     const { cart } = cartContext;
 
     return (
-        <Navbar bg="light" expand="lg">
+        <Navbar bg="primary" variant="dark" expand="lg">
             <Container fluid>
                 <Navbar.Brand as={Link} to="/">
                     Navbar scroll
@@ -30,6 +30,9 @@ const Header = (props) => {
                     >
                         <Nav.Link as={Link} to="/login">
                             Login
+                        </Nav.Link>
+                        <Nav.Link as={Link} to="/content">
+                            Content
                         </Nav.Link>
                         <NavDropdown title="Link" id="navbarScrollingDropdown">
                             <NavDropdown.Item href="#action3">
@@ -54,7 +57,7 @@ const Header = (props) => {
                             className="me-2"
                             aria-label="Search"
                         />
-                        <Button variant="outline-success">Search</Button>
+                        <Button variant="light">Search</Button>
                     </Form>
                 </Navbar.Collapse>
             </Container>
