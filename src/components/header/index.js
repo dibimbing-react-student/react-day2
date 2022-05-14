@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
     Navbar,
     Container,
@@ -6,14 +6,21 @@ import {
     Form,
     Nav,
     FormControl,
-    Button
+    Button,
 } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import { ValueContext } from "../../App";
 
 const Header = (props) => {
+    const cartContext = useContext(ValueContext);
+    const { cart } = cartContext;
+
     return (
         <Navbar bg="light" expand="lg">
             <Container fluid>
-                <Navbar.Brand href="#">Navbar scroll</Navbar.Brand>
+                <Navbar.Brand as={Link} to="/">
+                    Navbar scroll
+                </Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
                     <Nav
@@ -21,8 +28,9 @@ const Header = (props) => {
                         style={{ maxHeight: "100px" }}
                         navbarScroll
                     >
-                        <Nav.Link href="#action1">Home</Nav.Link>
-                        <Nav.Link href="#action2">Link</Nav.Link>
+                        <Nav.Link as={Link} to="/login">
+                            Login
+                        </Nav.Link>
                         <NavDropdown title="Link" id="navbarScrollingDropdown">
                             <NavDropdown.Item href="#action3">
                                 Action
@@ -36,7 +44,7 @@ const Header = (props) => {
                             </NavDropdown.Item>
                         </NavDropdown>
                         <Nav.Link href="#" disabled>
-                            {props.cart}
+                            {cart}
                         </Nav.Link>
                     </Nav>
                     <Form className="d-flex">

@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
-import { ColorContext } from "../../context";
+import { ValueContext } from "../../App";
 
 const Contact = () => {
-    const fontColor = useContext(ColorContext);
-    console.log(fontColor);
+    const colorContext = useContext(ValueContext);
+    const { fontColor } = colorContext;
 
     return (
         <div style={fontColor}>
