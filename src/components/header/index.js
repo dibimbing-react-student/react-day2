@@ -9,7 +9,7 @@ import {
     Button
 } from "react-bootstrap";
 
-const Header = () => {
+const Header = (props) => {
     return (
         <Navbar bg="light" expand="lg">
             <Container fluid>
@@ -36,7 +36,7 @@ const Header = () => {
                             </NavDropdown.Item>
                         </NavDropdown>
                         <Nav.Link href="#" disabled>
-                            Link
+                            {props.cart}
                         </Nav.Link>
                     </Nav>
                     <Form className="d-flex">
